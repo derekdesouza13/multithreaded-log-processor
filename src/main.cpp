@@ -5,7 +5,9 @@
 
 #include "../include/parser.h"
 #include "../include/worker.h"
+#include <unordered_map>
 
+unordered_map<string, int> device_errors;
 using namespace std;
 
 mutex mtx;
