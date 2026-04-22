@@ -4,11 +4,10 @@
 #include <string>
 #include <unordered_map>
 #include <mutex>
-#include <iostream>
 
 using namespace std;
 
-// 🔥 declare globals from main.cpp
+// Access global variables from main.cpp
 extern mutex mtx;
 extern int error_count;
 extern int info_count;
@@ -38,7 +37,7 @@ void process_chunk(vector<string>& lines, int start, int end) {
         }
     }
 
-    // 🔐 critical section
+    // Critical section
     lock_guard<mutex> lock(mtx);
 
     error_count += local_error;
